@@ -19,8 +19,20 @@ if thumbnail_spec and thumbnail_spec['href']:
     print thumbnail_spec['href']
     print ''
 
+images = [];
 
 image = """<img src="%s"><br />"""
 for img in soup.findAll("img", src=True):
-   print image % urlparse.urljoin(url, img["src"])
+   #print image % urlparse.urljoin("", img["src"])
+   print urlparse.urljoin("", img["src"])
    print ''
+   
+   images.append(urlparse.urljoin("", img["src"]))
+
+   
+def getImages():
+    return images
+    
+    
+getImages();
+
