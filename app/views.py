@@ -23,8 +23,15 @@ def home():
     
 @app.route('/api/thumbnail')
 def thumbnails():
+    """Excercise  2 API route that returns JSON images"""
+    return jsonify(error= None, message= "Success", thumbnails=image_getter.getImages())
     
-    return jsonify({error= None, message= "Success", thumbnails=image_getter.getImages() })
+@app.route("/thumbnails/view")
+def thumbnail_views():
+   
+   return render_template("thumbnails.html")
+    
+    
 
 
 ###
